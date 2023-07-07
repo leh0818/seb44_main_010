@@ -20,8 +20,7 @@ function App() {
       <BrowserRouter>
         <Nav />
         <Routes>
-
-          {/*소개페이지 */}
+          {/*서비스 소개페이지 */}
           <Route path="/" element={<IntroductionPage />}></Route>
            
            {/*로그인 페이지 */}
