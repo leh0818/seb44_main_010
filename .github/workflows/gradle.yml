@@ -35,7 +35,7 @@ jobs:
       uses: gradle/gradle-build-action@v2
       with:
         gradle-executable: 'server/The_10th_Finance'
-        arguments: build
+        run: ./gradlew build
 
     
     # build한 후 프로젝트를 압축합니다.
