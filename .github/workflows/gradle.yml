@@ -26,6 +26,8 @@ jobs:
     # gradle init 
     - name: init with Gradle
       uses: gradle/gradle-build-action@v2
+      with:
+        gradle-executable: 'server/The_10th_Finance/gradle'
     - run: gradle init
     
     # gradle로 build    
