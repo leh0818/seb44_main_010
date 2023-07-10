@@ -28,6 +28,8 @@ jobs:
       uses: server/The_10th_Finance/gradle/wrapper/gradle-build-action@67421db6bd0bf253fb4bd25b31ebb98943c375e1
       with:
         arguments: build
+        gradle-version: '8.1.1' 
+
     
     # build한 후 프로젝트를 압축합니다.
     - name: Make zip file
