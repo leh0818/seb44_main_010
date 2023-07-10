@@ -62,4 +62,4 @@ jobs:
         aws deploy create-deployment --application-name moneymade_deploy
         --deployment-config-name CodeDeployDefault.AllAtOnce
         --deployment-group-name moneymade_deploy_group
-        --s3-location bucket=$S3_BUCKET_NAME,bundleType=zip,key=practice-deploy.zip
+        --s3-location bucket=moneymade-github-action-s3-bucket,bundleType=zip,key=practice-deploy.zip
