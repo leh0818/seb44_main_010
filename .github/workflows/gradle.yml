@@ -23,10 +23,9 @@ jobs:
       with:
         java-version: '11'
         distribution: 'temurin'
-        
     # gradle로 build    
     - name: Build with Gradle
-      uses: server/The_10th_Finance/gradle/gradle-build-action@67421db6bd0bf253fb4bd25b31ebb98943c375e1
+      uses: server/The_10th_Finance/gradle/wrapper/gradle-build-action@67421db6bd0bf253fb4bd25b31ebb98943c375e1
       with:
         arguments: build
     
