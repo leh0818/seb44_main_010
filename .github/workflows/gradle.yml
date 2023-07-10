@@ -9,7 +9,6 @@ permissions:
   
 env:
   S3_BUCKET_NAME: moneymade-github-action-s3-bucket
-  CODE_DEPLOY_APPLICATION_NAME: moneymade_deploy
 
 jobs:
   build:
@@ -52,7 +51,7 @@ jobs:
    # CodeDeploy에게 배포 명령을 내립니다.
     - name: Code Deploy
       run: >
-        aws deploy create-deployment --application-name be-0-name
+        aws deploy create-deployment --application-name moneymade_deploy
         --deployment-config-name CodeDeployDefault.AllAtOnce
-        --deployment-group-name be-0-name-group
+        --deployment-group-name moneymade_deploy_group
         --s3-location bucket=$S3_BUCKET_NAME,bundleType=zip,key=practice-deploy.zip
