@@ -27,8 +27,8 @@ jobs:
     - name: Build with Gradle
       uses: gradle/gradle-build-action@67421db6bd0bf253fb4bd25b31ebb98943c375e1
       with:
+        gradle-executable: 'server/The_10th_Finance/gradle/wrapper'
         arguments: build
-        gradle-version: '8.1.1' 
 
     
     # build한 후 프로젝트를 압축합니다.
