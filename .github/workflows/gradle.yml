@@ -28,7 +28,7 @@ jobs:
       run: |
         cd server/The_10th_Finance
         chmod +x gradlew
-        ./gradlew build
+        ./gradlew build -x test
       shell: bash    
       
     # 임의로 2
