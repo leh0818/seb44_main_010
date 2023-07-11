@@ -23,28 +23,20 @@ jobs:
       with:
         java-version: '11'
         distribution: 'temurin'
-    # chmod
-    - name: Set execute permissions on gradlew
-      run: chmod +x server/The_10th_Finance/gradlew
-      shell: bash
+
     # gradle init 
     - name: init with Gradle
       uses: gradle/gradle-build-action@v2
       with:
         gradle-executable: 'server/The_10th_Finance/gradle'
     - run: gradle init
-    
-    # gradle로 build    
-    - name: Build with Gradle
-      uses: gradle/gradle-build-action@v2
-      with:
-       gradle-executable: 'server/The_10th_Finance/gradlew'
-       arguments: build
-
-    # 임의로 1 
-    - name: Print build result
-      run: ls -R server/The_10th_Finance/build/
-      shell: bash
+      
+    - name: Build with Gradle and print build result
+      run: |
+        chmod +x server/The_10th_Finance/gradlew
+        server/The_10th_Finance/gradlew build
+        ls -R server/The_10th_Finance/
+      shell: bash    
       
     # 임의로 2
     - name: Check jar file
