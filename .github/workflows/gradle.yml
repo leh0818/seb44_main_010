@@ -26,9 +26,9 @@ jobs:
       
     - name: Build with Gradle and print build result
       run: |
-        chmod +x server/The_10th_Finance/gradlew
-        server/The_10th_Finance/gradlew build
-        ls -R server/The_10th_Finance/
+        cd server/The_10th_Finance
+        chmod +x gradlew
+        ./gradlew build
       shell: bash    
       
     # 임의로 2
