@@ -37,6 +37,10 @@ jobs:
         gradle-executable: 'server/The_10th_Finance'
         run: ./gradlew build
 
+    # appspec.yml을 현재 디렉토리로 복사
+    - name: Copy appspec.yml to current directory
+      run: cp server/The_10th_Finance/appspec.yml .
+      shell: bash
     
     # build한 후 프로젝트를 압축합니다.
     - name: Make zip file
