@@ -23,12 +23,16 @@ jobs:
       with:
         java-version: '11'
         distribution: 'temurin'
+    # chmod
     
+    - name: Set execute permissions on gradlew
+      run: chmod +x server/The_10th_Finance/gradlew
+      shell: bash
     # gradle로 build    
     - name: Build with Gradle
       uses: gradle/gradle-build-action@v2
       with:
-       gradle-executable: 'server/The_10th_Finance'
+       gradle-executable: 'server/The_10th_Finance/gradlew'
        arguments: build
 
     # 임의로 1 
