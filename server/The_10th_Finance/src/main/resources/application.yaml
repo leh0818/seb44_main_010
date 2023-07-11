@@ -30,3 +30,7 @@ chatgpt:
 google:
   recaptcha:
     secret-key: 6LfdeKEmAAAAAE6DVb7hyb-hTiVTpGkNHv-pnd4k
+    
+logging:
+  file:
+    name: /var/log/myapp.log
