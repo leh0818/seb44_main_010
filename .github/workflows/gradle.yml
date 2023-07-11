@@ -43,7 +43,7 @@ jobs:
 
     # 임의로 1 
     - name: Print build result
-      run: ls -R build/
+      run: ls -R server/The_10th_Finance/build/
       shell: bash
       
     # 임의로 2
