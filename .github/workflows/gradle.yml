@@ -37,6 +37,16 @@ jobs:
         gradle-executable: 'server/The_10th_Finance'
         run: ./gradlew build
 
+    # 임의로 1 
+    - name: Print build result
+      run: ls -R server/The_10th_Finance/build/
+      shell: bash
+      
+    # 임의로 2
+    - name: Check jar file
+      run: ls server/The_10th_Finance/build/libs/
+      shell: bash
+      
     # appspec.yml, scripts(start.sh, stop.sh)디렉토리 복사
     - name: Copy appspec.yml to current directory
       run: |
@@ -44,6 +54,11 @@ jobs:
           cp -r server/The_10th_Finance/scripts .
       shell: bash
     
+    # 임의 3
+    - name: Copy jar file to current directory
+      run: cp server/The_10th_Finance/build/libs/*.jar .
+      shell: bash
+
     # build한 후 프로젝트를 압축합니다.
     - name: Make zip file
       run: zip -r ./practice-deploy.zip .
