@@ -1,18 +1,16 @@
 package com.The_10th_Finance.accounts.model;
 
 import com.The_10th_Finance.accounts.db.Accounts;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class AccountsResponseDto {
+public class AccountsResponseDto implements Serializable {
     private Long accountId;
 
     private String acoountType;
