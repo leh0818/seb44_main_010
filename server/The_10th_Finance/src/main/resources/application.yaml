@@ -65,3 +65,8 @@ dialogflow:
 aws:
   parameterstore:
     prefix: /config/moneymade
+credentials-file: "https://moneymade-github-action-s3-bucket.s3.ap-northeast-2.amazonaws.com/newagent-rukf-63c5448f7346.json"
+session-id: my-fixed-session-id
+  
+awsParameterStorePropertySource:
+  enabled: true

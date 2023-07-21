@@ -1,8 +1,9 @@
 name: Java CI with Gradle
 
 on:
-  schedule:
-    - cron: '0 0,4,12 * * *'
+  push:
+    branches:
+      - main
 
 permissions:
   contents: read
@@ -18,12 +19,12 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     
-    - name: Fetch source from original repository
-      run: |
-        git remote add original https://github.com/codestates-seb/seb44_main_010.git
-        git fetch original dev
-        git checkout dev
-      shell: bash
+    # - name: Fetch source from original repository
+    #   run: |
+    #     git remote add original https://github.com/codestates-seb/seb44_main_010.git
+    #     git fetch original dev
+    #     git checkout dev
+    #   shell: bash
   
     
     - name: Set up JDK 11
@@ -72,7 +73,7 @@ jobs:
     
     # 압축한 프로젝트를 S3로 전송합니다.
     - name: Upload to S3
-      run: aws s3 cp --region ap-northeast-2 ./practice-deploy.zip s3://moneymade-github-action-s3-bucket/practice-deploy.zip
+      run: aws s3 cp --region ap-northeast-2 ./practice-deploy.zip s3://$S3_BUCKET_NAME/practice-deploy.zip
    
    # CodeDeploy에게 배포 명령을 내립니다.
     - name: Code Deploy
@@ -80,4 +81,4 @@ jobs:
         aws deploy create-deployment --application-name moneymade_deploy
         --deployment-config-name CodeDeployDefault.AllAtOnce
         --deployment-group-name moneymade_deploy_group
-        --s3-location bucket=moneymade-github-action-s3-bucket,bundleType=zip,key=practice-deploy.zip
+        --s3-location bucket=$S3_BUCKET_NAME,bundleType=zip,key=practice-deploy.zip

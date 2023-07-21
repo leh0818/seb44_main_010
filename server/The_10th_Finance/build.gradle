@@ -47,7 +47,6 @@ dependencies {
 	implementation 'com.google.cloud:google-cloud-dialogflow:2.2.0'
 	implementation 'com.coveo:spring-boot-parameter-store-integration:1.1.2'
 	implementation 'org.springframework.cloud:spring-cloud-starter-aws-parameter-store-config:2.2.6.RELEASE'
-
 }
 
 tasks.named('test') {
