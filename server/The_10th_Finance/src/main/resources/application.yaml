@@ -3,31 +3,15 @@ spring:
   logging:
     level:
       org.springframework.batch: DEBUG
-  jwt:
-    key: CODESTARTES_STQREWR_EWREWR_EXTENDKEY  # 민감한 정보는 시스템 환경 변수에서 로드한다.
-    access-token-expiration-minutes: 1
-    refresh-token-expiration-minutes: 420
-#  h2:
-#    console:
-#      enabled: true
-#      settings:
-#        web-allow-others: true
-#      path: /h2-console
-#  datasource:
-#    initialization-mode: always
-#    driver-class-name: org.h2.Driver  # Database를 H2로 사용하겠다.
-#    url: jdbc:h2:~/test5  # H2 접속 정보
-#    username: sa  # H2 접속 시 입력할 username 정보 (원하는 것으로 입력)
-#    password:  # H2 접속 시 입력할 password 정보 (원하는 것으로 입력)
     datasource:
       driver-class-name: com.mysql.cj.jdbc.Driver
-      url: jdbc:mysql://127.0.0.1:3306/10thFiance?useSSL=false&useUnicode=true&serverTimezone=Asia/Seoul
+      url: : /config/moneymade/db.password
       username: admin
-      password: 12341234
-  jpa:
-    hibernate:
-      ddl-auto: create-drop
-    show-sql: true
+      password: /config/moneymade/db.password
+      jpa:
+        hibernate:
+          ddl-auto: create-drop
+        show-sql: true
     generate-ddl: true
   security:
     oauth2:
@@ -44,11 +28,25 @@ spring:
               - profile
 
 mail:
-  address:
-    admin: admin@gmail.com
+  port: 587
+  host: smtp.gmail.com
+  properties:
+    mail:
+      smtp:
+        auth: true
+        starttls:
+          required: true
+          enable: true
+        socket-factory:
+          port: 465
+          fallback: false
+          class: javax.net.ssl.SSLSocketFactory
+  username: /config/moneymade/mail.username
+  password: /config/moneymade/mail.password
+  debug: true
 
 jwt:
-  key: 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  # 민감한 정보는 시스템 환경 변수에서 로드한다.
+  key: /config/moneymade/jwt.key
   access-token-expiration-minutes: 1
   refresh-token-expiration-minutes: 420
 
@@ -57,9 +55,13 @@ chatgpt:
 
 google:
   recaptcha:
-    secret-key: 6LfdeKEmAAAAAE6DVb7hyb-hTiVTpGkNHv-pnd4k
+    secret-key: /config/moneymade/recaptcha.key
 
 dialogflow:
   project-id: newagent-rukf
-  credentials-file: "C:\\Users\\yyh80\\Downloads\\newagent-rukf-63c5448f7346.json"
+  credentials-file: "C:\\Users\\user\\Downloads\\newagent-rukf-63c5448f7346.json"
   session-id: my-fixed-session-id
+
+aws:
+  parameterstore:
+    prefix: /config/moneymade
