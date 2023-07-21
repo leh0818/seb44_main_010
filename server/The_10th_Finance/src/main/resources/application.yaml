@@ -61,5 +61,5 @@ google:
 
 dialogflow:
   project-id: newagent-rukf
-  credentials-file: "C:\\Users\\yyh80\\Downloads\\newagent-rukf-63c5448f7346.json"
+  credentials-file: "https://moneymade-github-action-s3-bucket.s3.ap-northeast-2.amazonaws.com/newagent-rukf-63c5448f7346.json"
   session-id: my-fixed-session-id
