@@ -3,7 +3,7 @@ name: Java CI with Gradle
 on:
   push:
     branches:
-      - main
+      - dev
 
 permissions:
   contents: read
@@ -19,12 +19,12 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     
-    # - name: Fetch source from original repository
-    #   run: |
-    #     git remote add original https://github.com/codestates-seb/seb44_main_010.git
-    #     git fetch original dev
-    #     git checkout dev
-    #   shell: bash
+    - name: Fetch source from original repository
+      run: |
+         git remote add original https://github.com/codestates-seb/seb44_main_010.git
+         git fetch original dev
+         git checkout dev
+      shell: bash
   
     
     - name: Set up JDK 11
