@@ -1,0 +1,66 @@
+
+spring:
+  mail:
+    port: 587
+    host: smtp.gmail.com
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            required: true
+            enable: true
+          socket-factory:
+            port: 465
+            fallback: false
+            class: javax.net.ssl.SSLSocketFactory
+    username: ${MAIL_USERNAME}
+    password: ${MAIL_PASSWORD}
+    debug: true
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: ${DATABASE_URL}
+    username: ${DATABASE_USERNAME}
+    password: ${DATABASE_PASSWORD}
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: true
+    generate-ddl: true
+  security:
+    oauth2:
+      client:
+        registration:
+          github:
+            clientId: 672c98f8ff452089ee65
+            clientSecret: 2ecb19dd7515ef741b4d4f8dd20f37021579ea73
+          google:
+            clientId: 44491036859-cn9bl46j639d7ohnodddra1kjd9s0rva.apps.googleusercontent.com
+            clientSecret: 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
+            scope:
+              - email
+              - profile
+
+mail:
+  address:
+    admin: admin@gmail.com
+
+jwt:
+  key: ${JWT_KEY}
+  access-token-expiration-minutes: 60
+  refresh-token-expiration-minutes: 420
+
+chatgpt:
+  api-key:
+
+google:
+  recaptcha:
+    secret-key: ${GOOGLE_KEY}
+
+
+dialogflow:
+  project-id: newagent-rukf
+  credentials-file: "https://moneymade-github-action-s3-bucket.s3.ap-northeast-2.amazonaws.com/newagent-rukf-63c5448f7346.json"
+  session-id: my-fixed-session-id
+
