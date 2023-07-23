@@ -14,7 +14,7 @@ permissions:
     
 environment:
   variables:
-    dialogflow.credentials-file: "/home/ubuntu/service_account.json"
+    CREDENTIALS_FILE: "/home/ubuntu/service_account.json"
 hooks:
   AfterInstall:
     - location: scripts/stop.sh
