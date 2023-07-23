@@ -2,6 +2,7 @@
 
 PROJECT_ROOT="/home/ubuntu/app"
 JAR_FILE="$PROJECT_ROOT/The_10th_Finance-0.0.1-SNAPSHOT.jar"
+S3_BUCKET_NAME="moneymade-github-action-s3-bucket"
 
 APP_LOG="$PROJECT_ROOT/application.log"
 ERROR_LOG="$PROJECT_ROOT/error.log"
@@ -12,6 +13,8 @@ TIME_NOW=$(date +%c)
 # build 파일 복사
 echo "$TIME_NOW > $JAR_FILE 파일 복사" >> $DEPLOY_LOG
 cp $PROJECT_ROOT/build/libs/*.jar $JAR_FILE
+
+aws s3 cp s3://$S3_BUCKET_NAME/service_account.json
 
 # jar 파일 실행
 echo "$TIME_NOW > $JAR_FILE 파일 실행" >> $DEPLOY_LOG
