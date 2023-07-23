@@ -61,5 +61,5 @@ google:
 
 dialogflow:
   project-id: newagent-rukf
-  credentials-file: ${dialogflow.credentials-file}
+  credentials-file: ${CREDENTIALS_FILE}
   session-id: my-fixed-session-id
