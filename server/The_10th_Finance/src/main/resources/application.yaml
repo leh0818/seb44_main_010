@@ -20,7 +20,7 @@ spring:
 
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: ${DATABASE_URL}
+    url: jdbc:mysql://moneymade-db.c3r6azftukjh.ap-northeast-2.rds.amazonaws.com:3306/10thFiance?useSSL=false&useUnicode=true&serverTimezone=Asia/Seoul
     username: ${DATABASE_USERNAME}
     password: ${DATABASE_PASSWORD}
   jpa:
