@@ -73,7 +73,6 @@ public class SecurityConfiguration {
 //                .oauth2Login(oauth2 -> oauth2
 //                .successHandler(new OAuth2MemberSuccessHandler(jwtTokenizer, authorityUtils, userService)))
                 .authorizeHttpRequests(authorize -> authorize
-                        .antMatchers("/payment").permitAll()
                         .antMatchers("/payment/complete").hasRole("USER")
                         .antMatchers("/payment/sum").hasRole("USER")
                         .antMatchers("/main/{userId}/{Month}").hasRole("USER")
