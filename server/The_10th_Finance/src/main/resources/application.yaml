@@ -14,18 +14,17 @@ spring:
             port: 465
             fallback: false
             class: javax.net.ssl.SSLSocketFactory
-    username: ${MAIL_USERNAME}
-    password: ${MAIL_PASSWORD}
+    username: taehwansw@gmail.com
+    password: rlncordvjtubmoln
     debug: true
 
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://moneymade-db.c3r6azftukjh.ap-northeast-2.rds.amazonaws.com:3306/10thFiance?useSSL=false&useUnicode=true&serverTimezone=Asia/Seoul&allowPublicKeyRetrieval=true
-    username: ${DATABASE_USERNAME}
-    password: ${DATABASE_PASSWORD}
+    url: moneymade-db.c3r6azftukjh.ap-northeast-2.rds.amazonaws.com/10thFiance?useSSL=false&useUnicode=true&serverTimezone=Asia/Seoul
+    username: admin
+    password: 12341234
   jpa:
     hibernate:
-      dialect: org.hibernate.dialect.MySQL8Dialect
       ddl-auto: validate
     show-sql: true
     generate-ddl: true
@@ -48,7 +47,7 @@ mail:
     admin: admin@gmail.com
 
 jwt:
-  key: ${JWT_KEY}
+  key: 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  # 민감한 정보는 시스템 환경 변수에서 로드한다.
   access-token-expiration-minutes: 60
   refresh-token-expiration-minutes: 420
 
@@ -57,11 +56,10 @@ chatgpt:
 
 google:
   recaptcha:
-    secret-key: ${GOOGLE_KEY}
+    secret-key: 6LdwszsnAAAAADaKOz3DRGlKq_VApk5sBu5L8azz
 
 
 dialogflow:
   project-id: newagent-rukf
-  credentials-file: "${CREDENTIALS_FILE}"
-  session-id: my-fixed-session-id
-
+credentials-file: "https://moneymade-github-action-s3-bucket.s3.ap-northeast-2.amazonaws.com/newagent-rukf-63c5448f7346.json"
+session-id: my-fixed-session-id
