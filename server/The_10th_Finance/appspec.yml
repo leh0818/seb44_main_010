@@ -11,7 +11,10 @@ permissions:
     pattern: "**"
     owner: ubuntu
     group: ubuntu
-
+    
+environment:
+  variables:
+    CREDENTIALS_FILE: "service_account.json"
 hooks:
   AfterInstall:
     - location: scripts/stop.sh
