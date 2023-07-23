@@ -73,6 +73,9 @@ public class SecurityConfiguration {
 //                .oauth2Login(oauth2 -> oauth2
 //                .successHandler(new OAuth2MemberSuccessHandler(jwtTokenizer, authorityUtils, userService)))
                 .authorizeHttpRequests(authorize -> authorize
+                        .antMatchers("/payment/complete").hasRole("USER")
+                        .antMatchers("/payment/sum").hasRole("USER")
+                        .antMatchers("/main/{userId}/{Month}").hasRole("USER")
                         .antMatchers("/h2-console/**").permitAll()
                         .antMatchers("/user/login").permitAll()
                         .antMatchers("/user/find").permitAll()
@@ -90,7 +93,6 @@ public class SecurityConfiguration {
                         .antMatchers("/consumption/day_upload").hasRole("USER")
                         .antMatchers("/consumption/calender/{userId}/{Month}").hasRole("USER")
                         .antMatchers("/main/dailysum/{userId}/{Month}/{Date}").hasRole("USER")
-                        .antMatchers("/payment/complete","/payment/sum","/main/{userId}/{Month}").hasRole("USER")
                         .antMatchers("/user/profile","/user/sign-up","/user/RefreshToken").permitAll()
                         .antMatchers("/user/emailConfirm","/property/post").hasRole("USER")
                         .antMatchers("/main/daily/{userId}/{Month}/{Date}").hasRole("USER")
