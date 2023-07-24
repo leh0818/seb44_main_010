@@ -36,7 +36,7 @@ public class PropertyController {
     }
 
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/delete/{id}")
     public void deleteOne(@PathVariable(name = "id") @Positive Long id){
         propertyService.deleteOne(id);
     }
