@@ -53,7 +53,7 @@ public class SecurityConfiguration {
                 .cors(cors -> cors
                         .configurationSource(request -> {
                             CorsConfiguration configuration = new CorsConfiguration();
-                            configuration.setAllowedOrigins(Arrays.asList("http://localhost:5173", "http://localhost:5176"));
+                            configuration.setAllowedOrigins(Arrays.asList("http://localhost:5173", "http://localhost:5176", "https://dashing-sorbet-f9defc.netlify.app/"));
                             configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PATCH", "DELETE","OPTIONS")); // 특정 HTTP 메서드 허용
                             configuration.setAllowedHeaders(Arrays.asList("*")); // 모든 헤더 허용
 //                            configuration.setAllowedHeaders(Arrays.asList("Authorization", "content-type", "Refresh"));
