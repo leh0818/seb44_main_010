@@ -84,6 +84,7 @@ public class SecurityConfiguration {
                         .antMatchers("/bank/post").permitAll()
                         .antMatchers("/dialogflow").permitAll()
                         .antMatchers("/cashPayment/post").permitAll()
+                        .antMatchers("/property/delete/{id}").permitAll()
                         .antMatchers("/asset/myInfo/{userId}/{Month}").hasRole("USER")
                         .antMatchers("/account/post").hasRole("USER")
                         .antMatchers("/property/patch/{id}").hasRole("USER")
