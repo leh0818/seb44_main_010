@@ -58,7 +58,6 @@ google:
   recaptcha:
     secret-key: 6LdwszsnAAAAADaKOz3DRGlKq_VApk5sBu5L8azz
 
-
 dialogflow:
   project-id: newagent-rukf
   credentials-file: ${CREDENTIALS_FILE}
