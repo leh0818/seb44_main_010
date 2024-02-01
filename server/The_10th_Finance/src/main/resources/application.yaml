@@ -56,7 +56,7 @@ chatgpt:
 
 google:
   recaptcha:
-    secret-key: 6LdwszsnAAAAADaKOz3DRGlKq_VApk5sBu5L8azz
+    secret-key: 6Lc1lGApAAAAAGvBf0TY7X9AEt1wU84gU6SD1W_l
 
 dialogflow:
   project-id: newagent-rukf
