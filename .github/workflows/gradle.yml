@@ -35,7 +35,7 @@ jobs:
     - name: Set Yaml
       uses: microsoft/variable-substitution@v1
       with:
-        files: server/The_10th_Finance/src/main/resources/application.yml 
+        files: server/The_10th_Finance/src/main/resources/application.yaml 
       env:
         spring.datasource.url: ${{ secrets.DATABASE_URL }} 
         spring.datasource.username: ${{ secrets.DATABASE_USERNAME }} 
